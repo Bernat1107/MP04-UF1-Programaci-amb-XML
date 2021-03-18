@@ -14,11 +14,21 @@
 			print_r($_POST);
 			print_r($_FILES);
 
+
+			if (!empty($_POST)) {
+
+
+
 				if(isset($_POST["portmail"]) {
 
 				echo "se tiene que enviar un email";
+				}
+
 			}
 
+			else {
+				header("Location: index.php");
+			}
 		?>
 
 

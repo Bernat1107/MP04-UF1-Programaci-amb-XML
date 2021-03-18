@@ -17,7 +17,9 @@
 
 			if (!empty($_POST)) {
 
+				$nombre = $_POST["nombre"];
 
+				echo "<p> Hola $nombre </p>";
 
 				if(isset($_POST["portmail"]) {
 

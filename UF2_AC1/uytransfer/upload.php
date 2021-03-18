@@ -21,6 +21,8 @@
 
 				echo "<p> Hola $nombre </p>";
 
+				$nombreArchivo = $_FILES["cosaparasubir"]["name"]
+
 				if(isset($_POST["portmail"]) {
 
 				echo "se tiene que enviar un email";

@@ -21,7 +21,7 @@
 
 				echo "<p> Hola $nombre </p>";
 
-				$nombreArchivo = $_FILES["cosaparasubir"]["name"]
+				$nombreArchivo = $_FILES["cosaparasubir"]["name"];
 
 				if(isset($_POST["portmail"]) {
 

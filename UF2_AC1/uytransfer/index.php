@@ -8,6 +8,11 @@
 	</head>
 
 	<body>
+
+		<?php
+
+			include "header.php";
+		?>
 			<form name="subir" action="upload.php" method="post" enctype="multipart/form-data">
 				<input type="text" name="nombre" placeholder="tu nombre">	
 				<input type="file" name="archivo"> 	

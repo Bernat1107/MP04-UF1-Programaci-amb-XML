@@ -7,23 +7,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 
-
 	<body>
-		
-		<?php
+			
+
+			<?php
 
 			print_r($_POST);
 			print_r($_FILES);
 
-			if(isset($_POST["portmail"]) {
+				if(isset($_POST["portmail"]) {
 
-			echo
-		}
-
-
-
+				echo "se tiene que enviar un email";
+			}
 
 		?>
 
+	
 
 	</body>
+</html>

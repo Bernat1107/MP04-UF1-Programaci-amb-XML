@@ -14,7 +14,7 @@
 				<input type="checkbox" name="pormail" placeholder="tu nombre">	
 				<input type="mail" name="email" placeholder="email de tu colega">	
 				<textarea name="mensaje" placeholder="escribe el mensaje"> </textarea>
-
+				<button type="submit">Enviar </button>
 			</form>
 
 

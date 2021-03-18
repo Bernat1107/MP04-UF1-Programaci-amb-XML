@@ -10,12 +10,20 @@
 
 	<body>
 		
+		<?php
+
+			print_r($_POST);
+			print_r($_FILES);
+
+			if(isset($_POST["portmail"]) {
+
+			echo
+		}
 
 
 
 
+		?>
 
 
-
-		
 	</body>

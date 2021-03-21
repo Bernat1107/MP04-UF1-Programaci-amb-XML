@@ -7,21 +7,34 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 
-	<body>
-
-		<?php
+	 <body>    
+		    <?php
 
 			include "header.php";
-		?>
-			<form name="subir" action="upload.php" method="post" enctype="multipart/form-data">
-				<input type="text" name="nombre" placeholder="tu nombre">	
-				<input type="file" name="archivo"> 	
-				<input type="checkbox" name="pormail" placeholder="tu nombre">	
-				<input type="mail" name="email" placeholder="email de tu colega">	
-				<textarea name="mensaje" placeholder="escribe el mensaje"> </textarea>
-				<button type="submit">Enviar </button>
-			</form>
+		     ?>
+		
+	           <form name ="datos" action="upload.php" method="post" enctype="multipart/form-data">
+				      
+				      <input type="text" name="nombre" id="nombre"  placeholder="Tu nombre"    />  
 
+                 
+			          <input type="file" name="fichero" id="fichero"  />  
+			       
+			          	          
+			          <label   for="validacion">Quiero enviar el link de descarga por email </label> 
+			          <input type="checkbox" name="validacion" id="validacion" />  
+                      
+				      <input type="mail" name="mail" id="mail" placeholder="Email del destinatario"    /> 
+			            
+                     <label   for="area"> Mensaje</label>
 
+			         <textarea name="area" id="area"  rows="6"   ></textarea>
+			    
+					 <button type="submit">Subir archivo</button>
+					   
+				</form>
+		 
+		 
+			  			 	       
 	</body>
 </html>

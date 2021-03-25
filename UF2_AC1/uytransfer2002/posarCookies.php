@@ -9,7 +9,13 @@
 
 	<body>
 		 <?php
-		    include "header.php";		
+		   
+		    include "header.php";	
+
+		    $link = "https://www.google.com";
+
+		    $numlinks = 1;
+		    	
 	     
 
 		?>

@@ -12,22 +12,20 @@
 		   
 		    include "header.php";	
 
-		    $link = "https://www.google.com";
-
-		    $numlinks = 1;
+		   
 		    if (isset($_COOKIE["numlinks"])) {
 
 		    	$numlinks = $_COOKIE["numlinks"];
-		    	$numlinks++;
+		    	
+
+		    	while(isset($_COOKIE["numlinks"]))
+
+		    		$numlinks++;
+
 
 		    }
 
-		    setcookie("numlinks", $numlinks, time() + 60 * 60 * 24 * 1000 );
-		    	
-	     	 setcookie(link"numlinks", $link, time() + 60 * 5);
-
-
-	     	 echo "Echo";
+		   
 
 		?>
 		    

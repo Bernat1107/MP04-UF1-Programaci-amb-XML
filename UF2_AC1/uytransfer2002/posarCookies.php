@@ -15,10 +15,17 @@
 		    $link = "https://www.google.com";
 
 		    $numlinks = 1;
+		    if (isset($_COOKIE["numlinks"])) {
+
+		    	$numlinks = $_COOKIE["numlinks"];
+		    	$numlinks++;
+
+		    }
 		    	
 	     
 
 		?>
+		    }
 	</body>
 </html>
            

@@ -10,9 +10,15 @@
 	<body>
 		 <?php
 		    include "header.php";		
-	        define("COLOR_1", "#9e9e9e");
-			const COLOR_2 = "pink";
+	        
+			$textoMail = "";
+			$error_mail = 0;   
+
 		    $nompersona = $_POST["nombre"];
+		    $mail = $_POST["mail"];
+		    $mensaje = $_POST["area"];
+		  
+
 			if (!empty($_FILES)) {
 
 				$nombre = $_FILES["archivo"]["name"];
@@ -20,11 +26,13 @@
 				$tamanyo = $_FILES["archivo"]["size"];
 				$extension = substr($nombre, strpos($nombre, "."));
 				$rutaDestino = "files/".date("Y").date("m").date("d").rand(10000,99999).$extension;
-				$linkDescarga = $_SERVER["HTTP_ORIGIN"].$rutaDestino;
-                
+				$linkDescarga = $_SERVER["HTTP_ORIGIN"]."/$rutaDestino";
 
+				 
 				if (($tamanyo < 10240000 ) &&
-				  ($extension == ".pdf" || $extension == ".jpg" || $extension == ".png" || $extension == ".rar" || $extension == ".zip"   ) )
+				  ($extension == ".PDF" || $extension == ".pdf" || $extension == ".JPG" || $extension == ".jpg" ||
+			    	$extension == ".PNG" || $extension == ".png" || $extension == ".RAR" || $extension == ".rar" ||
+			    	$extension == ".ZIP" || $extension == ".zip"))
 
 				{
 			    	move_uploaded_file($rutaTmp, $rutaDestino);
@@ -48,12 +56,18 @@
                      Hola $nompersona , usa este link para compartir tu archivo  </div>";
                     }
 
+
 				    echo "<p style=\" float: left; margin-right: 5px; width: 900px; height: 50px;font-size: 25px; \"> <a href=\"$rutaDestino\">$linkDescarga</a></p>";
+                    
+                     
+                    include "posarCookies.php";
+                    
+
 			    }
 			    else
 			     {
 			      echo "<br><p style=\"float: left; margin: 100px; \"> <img src=\"imatges/incorrecto.jpg\" /> </p>";
-			       if ($tamanyo < 10240000 ) 
+			       if ($tamanyo > 10240000 ) 
 			       {
                    echo "<p style=\"float: left; font-size: 25px;\">ARCHIVO  NO ENVIADO por TAMAÑO > 10MB  </p>";
                   }
@@ -63,7 +77,51 @@
                    }
 
 			    }
+
+          
+                if (!empty($_POST["validacion"]) )
+                 {
+	                
+	                if (strpos($mail, "@") == false)
+	                   {
+				        
+				 	    echo " ERROR EN EL CORREU ";
+					    header('Location: http://localhost/practica/index.php');
+					  
+					    
+				       }
+
+				    else 
+				      {
+                        // enviem el link a un email 
+				      
+
+				      	$to = "$mail";
+                        $subject = "UYTRANSFER_comparticio_fitxers";
+                        $headers = "MIME-Version: 1.0" . "\r\n";
+                        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                       
+                        if (empty($_POST["area"]) )
+                        {	
+                        
+                        $mensaje = "Sorpresa!! Alguien ha compartido contigo un archivo. Descargalo en el siguiente link : "."<br>".$linkDescarga."<br>"."Salutacions";
+                        }
+                        else
+                        {
+                           $mensaje =$mensaje."<br>".$linkDescarga."<br>"."Salutacions";
+                        }
+	
+
+                        mail($to, $subject, $mensaje, $headers);
+				      }   
+
+                  } 
+
+               
+
 			}
+
+
 
 
 		?>

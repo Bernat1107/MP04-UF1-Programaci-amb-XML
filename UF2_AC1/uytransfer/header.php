@@ -17,8 +17,8 @@
 		      		<nav>
 		    		<ul>
 						<li><a href="#">Enviar Archivo</a></li>
-						<li><a href="#">Mis últimos archivos</a></li>
-				 
+						<li><a href="mostrarCookies.php"> Mis últimos archivos</a></li>
+ 
 					</ul>
 					</nav> 
 

@@ -26,7 +26,7 @@
           
 		    setcookie("numlinks", $numlinks, time() + 60 * 60 * 24 * 1000 );
 		    	
-	     	setcookie("link$numlinks", $link, time() + 60 * 5);
+	     	setcookie("link$numlinks", $link, time() + 86400 * 7);
 
 
 	     	 
